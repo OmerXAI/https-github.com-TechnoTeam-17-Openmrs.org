@@ -1,4 +1,4 @@
-# E-Junkie
+# Openmrs.org
 
 Techno Study Batch 4, Group 17, Friday Project / date 08-09-2023
 
