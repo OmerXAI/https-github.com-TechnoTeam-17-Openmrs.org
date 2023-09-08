@@ -1,5 +1,12 @@
-public class deneme {
-    public static void main(String[] args) {
-        System.out.println("Merhaba Team");
+import Utility.BaseDriver;
+import Utility.MyFunc;
+import org.testng.annotations.Test;
+
+public class deneme extends BaseDriver {
+    @Test
+            public void test(){
+
+        MyFunc.Bekle(5);
+        //logout();
     }
 }
