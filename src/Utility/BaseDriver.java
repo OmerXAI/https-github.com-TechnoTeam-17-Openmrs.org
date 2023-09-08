@@ -76,7 +76,7 @@ public void logout(){
 
    @AfterClass
     public void bitisIslemleri(){ // tearDown
-        logout();
+
         MyFunc.Bekle(2);
         driver.quit();
     }
