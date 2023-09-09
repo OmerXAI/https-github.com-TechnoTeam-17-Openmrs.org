@@ -34,9 +34,9 @@ public class us_05_myaccount extends BaseDriver {
 
         MyFunc.Bekle(2);
         for (WebElement e : captions) {
-           System.out.println("e.getText() = " + e.);}
+           System.out.println("e.getText() = " + e.getText());}
        // Assert.assertTrue(e.getText().contains(" Change Password "), "aranan kelime bulunamadı");
-       Assert.assertFalse(captions., "My Languages  gözüktü ");
+     //  Assert.assertFalse(captions., "My Languages  gözüktü ");
 
             //  chng.click();
       //  Action aksiyon3 = aksiyonlar.click(chng).click().build();
