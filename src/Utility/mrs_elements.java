@@ -32,9 +32,9 @@ public class mrs_elements {
     public WebElement app3;
     @FindBy(xpath ="//a[@id='referenceapplication-registrationapp-registerPatient-homepageLink-referenceapplication-registrationapp-registerPatient-homepageLink-extension']")
     public WebElement patientRegistarion;
-    @FindBy(xpath="//*[@id='fr89-field']")
+    @FindBy(xpath="//*[@name='givenName']")
     public WebElement nameReg;
-    @FindBy(xpath="//*[@id='fr2310-field']")
+    @FindBy(xpath="//*[@name='familyName']")
     public WebElement familyNameReg;
     @FindBy(xpath="//*[@id='next-button']")
     public WebElement nextReg;
@@ -44,6 +44,8 @@ public class mrs_elements {
     public WebElement birthDay;
     @FindBy(xpath="//*[@id='birthdateMonth-field']")
     public WebElement birthMonth;
+    @FindBy(xpath="//option[@value='1']")
+    public WebElement january;
     @FindBy(xpath="//*[@id='birthdateYear-field']")
     public WebElement birthYear;
     @FindBy(xpath="//*[@id='address1']")
@@ -51,16 +53,26 @@ public class mrs_elements {
 
     @FindBy(xpath="//*[@id='cityVillage']")
     public WebElement city;
-    @FindBy(xpath="//*[@name='country']")
+    @FindBy(xpath="//*[@id='country']")
     public WebElement country;
     @FindBy(xpath="//*[@name='phoneNumber']")
     public WebElement phone;
     @FindBy(xpath="//*[@id='relationship_type']")
     public WebElement relationship;
-    @FindBy(xpath="//*[@placeholder='Person Name']")
+    @FindBy(xpath="//*[@data-val='Parent']")
+    public WebElement parent;
+    @FindBy(xpath="//*[@ng-model='relationship.name']")
     public WebElement personName;
-    @FindBy(xpath="//*[@id='submit']")
+    @FindBy(xpath="//*[@class='confirm right']")
     public WebElement confirm;
+    @FindBy(xpath="//*[@value='Confirm']")
+    public WebElement finalConfirm;
+    @FindBy(xpath="//span[@class='PersonName-givenName']")
+    public WebElement registeredName;
+    @FindBy(xpath="//*[@class='PersonName-familyName']")
+    public WebElement registeredFamilyName;
+
+
 
 
 
