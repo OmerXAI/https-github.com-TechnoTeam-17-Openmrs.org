@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -44,32 +45,31 @@ public void logout(){
     public void login(){
         driver.get("https://openmrs.org");
         MyFunc.Bekle(1);
+        mrs_elements elemans=new mrs_elements();
+        elemans.demobuton.click();
+        MyFunc.Bekle(1);
 
-        WebElement demoi = driver.findElement(By.xpath("//a[@class='zak-button']"));
-        demoi.click();
+        elemans.expo2.click();
         MyFunc.Bekle(1);
-        WebElement expo2 = driver.findElement(By.xpath("//*[text()='Explore OpenMRS 2']"));
-        expo2.click();
+
+        elemans.expo2a.click();
         MyFunc.Bekle(1);
-        WebElement expo2a = driver.findElement(By.xpath("//*[text()='Enter the OpenMRS 2 Demo']"));
-        expo2a.click();
+
+        elemans.name.sendKeys("admin");
         MyFunc.Bekle(1);
-        WebElement name = driver.findElement(By.id("username"));
-        name.sendKeys("admin");
+
+        elemans.pass.sendKeys("Admin123");
         MyFunc.Bekle(1);
-        WebElement password = driver.findElement(By.id("password"));
-        password.sendKeys("Admin123");
-        MyFunc.Bekle(1);
-        WebElement loc = driver.findElement(By.id("Inpatient Ward"));
-       loc.click();
+
+        elemans.loc.click();
         MyFunc.Bekle(2);
-        WebElement loginBtn = driver.findElement(By.id("loginButton"));
 
-        Actions aksiyonlar = new Actions(driver);// web sayfası aksiyonlara açıldı.
-        Action aksiyon = aksiyonlar.moveToElement(loginBtn).click().build();
-        aksiyon.perform();
-        //  loginBtn.click();
-        wait.until(ExpectedConditions.urlToBe("https://demo.openmrs.org/openmrs/referenceapplication/home.page"));
+        elemans.loginbut.click();
+    //    Actions aksiyonlar = new Actions(driver);// web sayfası aksiyonlara açıldı.
+    //    Action aksiyon = aksiyonlar.moveToElement(loginBtn).click().build();
+    //    aksiyon.perform();
+
+     //   wait.until(ExpectedConditions.urlToBe("https://demo.openmrs.org/openmrs/referenceapplication/home.page"));
         MyFunc.Bekle(10);
 
     }
