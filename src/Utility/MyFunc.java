@@ -25,9 +25,8 @@ public class MyFunc {
         Assert.assertTrue(msgLabel.getText().toLowerCase().contains("success"));
     }
 
-    public static int randomGenerator(int sinir){
-        return (int)(Math.random()*sinir);
-    }
+    public static int randomGenerator(int sinir) {
+        return (int) (Math.random() * sinir);}
 
     public static boolean listContainsString(List<WebElement> list, String aranacakKelime){
         boolean bulundu=false;
