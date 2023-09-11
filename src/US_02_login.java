@@ -3,6 +3,7 @@ import Utility.MyFunc;
 import Utility.mrs_elements;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class US_02_login extends BaseDriver {
 
@@ -41,13 +42,15 @@ public class US_02_login extends BaseDriver {
     }
         @DataProvider // bu metoda dataprovider görevi verildi.
         public Object[][] UserData(){ // DataProvider olarak kullanılcak metodun tipi Object olmak zorunda.
+            SoftAssert softAssert=new SoftAssert();
+
             Object[][] data={
-                   // {"ihsan","122334"},
-                    //{"sokol", "rustem5"},
-                    //{"zeynep","zeynep111"},
-                    //{"serkan","serkan500"},
-                    //{"neslihan","hakan700"},
-                    //{"aygul","nergis300"},
+                    {"ihsan","122334"},
+                    {"sokol", "rustem5"},
+                    {"zeynep","zeynep111"},
+                    {"serkan","serkan500"},
+                    {"neslihan","hakan700"},
+                    {"aygul","nergis300"},
                     {"Admin","Admin123"},
 
             };
