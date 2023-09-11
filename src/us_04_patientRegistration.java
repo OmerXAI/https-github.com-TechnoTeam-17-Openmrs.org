@@ -1,4 +1,5 @@
 import Utility.BaseDriver;
+import Utility.BaseDriverParameter;
 import Utility.MyFunc;
 import Utility.mrs_elements;
 import org.openqa.selenium.By;
@@ -9,7 +10,7 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 public class us_04_patientRegistration extends BaseDriver {
-    @Test
+    @Test(groups={"Regression"})
     public void registrationTest(){
 
     driver.get("https://demo.openmrs.org/openmrs/login.htm");
