@@ -71,7 +71,10 @@ public class mrs_elements {
     public WebElement registeredName;
     @FindBy(xpath="//*[@class='PersonName-familyName']")
     public WebElement registeredFamilyName;
-
+    @FindBy(xpath=" //*[@id=\"patient-search-results-table\"]/tbody/tr/td[1]")
+    public WebElement patientId;
+    @FindBy(xpath="//*[@id=\"time-zone-warning\"]/div/div/p/text()")
+    public WebElement timeZoneAlarm;
 
 
 

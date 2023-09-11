@@ -56,19 +56,28 @@ public class BaseDriverParameter {
     }
 
     public void loginTesti(){
-        driver.get("https://opencart.abstracta.us/index.php?route=account/login");
+        driver.get("https://openmrs.org");
+        MyFunc.Bekle(1);
+        mrs_elements elemans=new mrs_elements();
+        elemans.demobuton.click();
+        MyFunc.Bekle(1);
+
+        elemans.expo2.click();
+        MyFunc.Bekle(1);
+
+        elemans.expo2a.click();
+        MyFunc.Bekle(1);
+
+        elemans.name.sendKeys("admin");
+        MyFunc.Bekle(1);
+
+        elemans.pass.sendKeys("Admin123");
+        MyFunc.Bekle(1);
+
+        elemans.loc.click();
         MyFunc.Bekle(2);
 
-        WebElement inputEmail = driver.findElement(By.id("input-email"));
-        inputEmail.sendKeys("testng1@gmail.com");
-
-        WebElement inputpassword = driver.findElement(By.id("input-password"));
-        inputpassword.sendKeys("123qweasd");
-
-        WebElement loginBtn = driver.findElement(By.xpath("//input[@type='submit']"));
-        loginBtn.click();
-
-        Assert.assertTrue(driver.getTitle().equals("My Account"));
+        elemans.loginbut.click();
     }
 
     @AfterClass
