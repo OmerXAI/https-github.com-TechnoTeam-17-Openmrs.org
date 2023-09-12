@@ -19,7 +19,7 @@ public class BaseDriverforLogins {
     public static WebDriverWait wait;
 
     @BeforeClass
-    public void baslangicIslemleri(){
+    public void baslangicIslemleri2(){
         Logger logger= Logger.getLogger(""); // output yapılan logları al.
         logger.setLevel(Level.SEVERE); // sadece ERROR ları göster
 
@@ -32,12 +32,12 @@ public class BaseDriverforLogins {
         //login(); //her testin baslangicinda login yapilmadigi icin simdilik yoruma alindi
 
     }
-public void logout(){
+public void logout2(){
     WebElement logouta = driver.findElement(By.xpath("//a[@href='/openmrs/appui/header/logout.action?successUrl=openmrs']"));
     logouta.click();
 
 }
-    public void login(){
+    public void login2(){
         driver.get("https://openmrs.org");
         MyFunc.Bekle(1);
         mrs_elements elemans=new mrs_elements();
@@ -72,7 +72,7 @@ public void logout(){
     }
 
    @AfterClass
-    public void bitisIslemleri(){ // tearDown
+    public void bitisIslemleri2(){ // tearDown
 
         MyFunc.Bekle(2);
         //driver.quit();
