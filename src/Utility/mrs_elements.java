@@ -1,9 +1,11 @@
 package Utility;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 public class mrs_elements {
     public mrs_elements() {
@@ -76,9 +78,20 @@ public class mrs_elements {
     @FindBy(xpath="//*[@id=\"time-zone-warning\"]/div/div/p/text()")
     public WebElement timeZoneAlarm;
 
+    @FindBy(xpath="//*[@class='icon-user small']")
+    public WebElement myacc;
 
+    @FindBy(xpath="//*[@href='/openmrs/adminui/myaccount/myAccount.page']")
+    public WebElement myacc2;
 
+    @FindBy(xpath="(//*[@class='button app big'])[1]")
+    public WebElement cap1;
 
+    @FindBy(xpath="(//*[@class='button app big'])[2]")
+    public WebElement cap2;
+
+    @FindBy(xpath="(//div[@class='text'])/p/text()")
+    public WebElement hata;
 
 
 
