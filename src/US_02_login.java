@@ -1,11 +1,12 @@
 import Utility.BaseDriver;
+import Utility.BaseDriverforLogins;
 import Utility.MyFunc;
 import Utility.mrs_elements;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class US_02_login extends BaseDriver {
+public class US_02_login extends BaseDriverforLogins {
 
     @Test(dataProvider = "UserData")
 
