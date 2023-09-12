@@ -7,34 +7,51 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.lang.reflect.Array;
 import java.util.List;
 
 public class us_04_patientRegistration extends BaseDriver {
-    @Test(groups={"Regression"})
-    public void registrationTest(){
 
-    driver.get("https://demo.openmrs.org/openmrs/login.htm");
 
-    List<WebElement> locations=driver.findElements(By.xpath("//ul[@class='select']//li"));
+    @Test(groups = {"Regression"})
+    public static void registrationTest() {
 
-    int randomSecim= MyFunc.randomGenerator(locations.size());//random bir sayi uretildi
+        //driver.get("https://demo.openmrs.org/openmrs/login.htm");
 
-        String locationAdi=locations.get(randomSecim).getText();//randomdaki locationin adi alindi
+        WebElement loginLokasyonSecimi = driver.findElement(By.xpath("//span[@id='selected-location']"));
+        loginLokasyonSecimi.click();
+
+        MyFunc.Bekle(5);
+
+
+        List<WebElement> loginLokasyonSecimiList = driver.findElements(By.xpath(" //div[@id='session-location'] //ul //child::li"));
+        for (WebElement element : loginLokasyonSecimiList) {
+            System.out.print(element.getText()); // WebElement'in içeriğini yazdırır
+        }
+
+        int randomSecim = MyFunc.randomGenerator(loginLokasyonSecimiList.size());
+        System.out.println("randomSecim = " + randomSecim);//random bir sayi uretildi
+        String locationAdi = loginLokasyonSecimiList.get(randomSecim).getText();//randomdaki locationin adi alindi
+
+      // List<WebElement> locations = driver.findElements(By.xpath("//ul[@class='select']//li"));
+
+      // int randomSecim = MyFunc.randomGenerator(locations.size());//random bir sayi uretildi
+
+      //  String locationAdi = locations.get(randomSecim).getText();//randomdaki locationin adi alindi
         System.out.println("Lokasyon = " + locationAdi);//kontrol icin yazildi
-        locations.get(randomSecim).click();
+        loginLokasyonSecimiList.get(randomSecim).click();
 
-        mrs_elements elemans=new mrs_elements();
-        elemans.name.sendKeys("Admin");
-        MyFunc.Bekle(1);
-
-        elemans.pass.sendKeys("Admin123");
-        MyFunc.Bekle(1);
-
-        elemans.loginbut.click();
-
+        mrs_elements elemans = new mrs_elements();
+        //  elemans.name.sendKeys("Admin");
+        //  MyFunc.Bekle(1);
+        //  elemans.pass.sendKeys("Admin123");
+        //  MyFunc.Bekle(1);
+        //  elemans.loginbut.click();
         elemans.patientRegistarion.click();
-        elemans.nameReg.sendKeys("Patient");
-        elemans.familyNameReg.sendKeys("Abc");
+        String patientName="Patient";
+        elemans.nameReg.sendKeys(patientName);
+        String patientLastName="Abc";
+        elemans.familyNameReg.sendKeys(patientLastName);
         MyFunc.Bekle(1);
         elemans.nextReg.click();
         elemans.female.click();
@@ -67,7 +84,18 @@ public class us_04_patientRegistration extends BaseDriver {
         elemans.finalConfirm.click();
 
 
+        WebElement patientID= driver.findElement(By.cssSelector("div[class='float-sm-right'] span"));
+
+        String patient=patientID.getText();
+
+        String isim1=elemans.registeredName.getText();
+        String isim2=elemans.registeredFamilyName.getText();
+
+
+        Assert.assertTrue(isim1.contains(patientName), " Bulunamadı");
+        Assert.assertTrue(isim2.contains(patientLastName), " Bulunamadı");
 
 
 
-}}
+    }
+}
