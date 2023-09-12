@@ -34,7 +34,7 @@ public class BaseDriver {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));  // 20 sn mühlet: elementi bulma mühleti
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
-        //login(); her testin baslangicinda login yapilmadigi icin simdilik yoruma alindi
+        login(); //her testin baslangicinda login yapilmadigi icin simdilik yoruma alindi
 
     }
 public void logout(){
@@ -62,7 +62,7 @@ public void logout(){
         MyFunc.Bekle(1);
 
         elemans.loc.click();
-        MyFunc.Bekle(2);
+      //  MyFunc.Bekle(2);
 
         elemans.loginbut.click();
     //    Actions aksiyonlar = new Actions(driver);// web sayfası aksiyonlara açıldı.
@@ -70,7 +70,7 @@ public void logout(){
     //    aksiyon.perform();
 
      //   wait.until(ExpectedConditions.urlToBe("https://demo.openmrs.org/openmrs/referenceapplication/home.page"));
-        MyFunc.Bekle(10);
+       // MyFunc.Bekle(2);
 
     }
 
@@ -78,7 +78,7 @@ public void logout(){
     public void bitisIslemleri(){ // tearDown
 
         MyFunc.Bekle(2);
-        driver.quit();
+        //driver.quit();
     }
 
 }
