@@ -70,7 +70,7 @@ public void logout(){
     //    aksiyon.perform();
 
      //   wait.until(ExpectedConditions.urlToBe("https://demo.openmrs.org/openmrs/referenceapplication/home.page"));
-        MyFunc.Bekle(10);
+        MyFunc.Bekle(3);
 
     }
 
