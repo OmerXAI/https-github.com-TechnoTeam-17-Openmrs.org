@@ -1,7 +1,4 @@
-import Utility.BaseDriver;
-import Utility.BaseDriverforLogins;
-import Utility.MyFunc;
-import Utility.mrs_elements;
+import Utility.*;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -13,8 +10,8 @@ public class US_02_login extends BaseDriverforLogins {
 
     public void login(String username, String password){
         driver.get("https://openmrs.org");
-        MyFunc.Bekle(1);
-        mrs_elements elemans=new mrs_elements();
+        MyFunc.Bekle(2);
+        mrs_elementsforlogins elemans= new mrs_elementsforlogins();
         elemans.demobuton.click();
         MyFunc.Bekle(1);
 
