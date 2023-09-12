@@ -1,8 +1,8 @@
 import Utility.BaseDriver;
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 public class _01_LoginGiris_Hatali extends BaseDriver {
     @Test
@@ -40,12 +40,12 @@ public class _01_LoginGiris_Hatali extends BaseDriver {
             wait.until(ExpectedConditions.textToBe(By.id("submit-control"), "You must choose a location!"));
             WebElement mesaj=driver.findElement(By.id("submit-control"));
 
-        Assert.assertTrue("Aranılan Mesaj bulunamadı", mesaj.getText().equals("You must choose a location!"));
+        Assert.assertTrue(mesaj.getText().equals("You must choose a location!"), "Aranılan Mesaj bulunamadı");
 
             wait.until(ExpectedConditions.textToBe(By.id("submit-control"), "Invalid username/password. Please try again."));
             WebElement mesaj2=driver.findElement(By.id("submit-control"));
 
-        Assert.assertTrue("Aranılan Mesaj bulunamadı", mesaj.getText().equals("Invalid username/password. Please try again."));
+        Assert.assertTrue(mesaj.getText().equals("Invalid username/password. Please try again."), "Aranılan Mesaj bulunamadı");
         }
 
 
