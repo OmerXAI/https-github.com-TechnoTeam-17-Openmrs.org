@@ -71,6 +71,8 @@ public void logout(){
 
      //   wait.until(ExpectedConditions.urlToBe("https://demo.openmrs.org/openmrs/referenceapplication/home.page"));
        // MyFunc.Bekle(2);
+=======
+       
 
     }
 
