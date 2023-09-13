@@ -15,7 +15,7 @@ public class us_10_wrongClock extends BaseDriver {
 
         mrs_elements elemans = new mrs_elements();
         Actions aksiyonlar = new Actions(driver);
-        login();
+      //  login();
         elemans.app.click();
         MyFunc.Bekle(3);
 
