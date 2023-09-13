@@ -3,6 +3,7 @@ import Utility.MyFunc;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static javafx.scene.input.KeyCode.W;
@@ -47,6 +48,9 @@ public class US_06_HastaListesindeArama extends BaseDriver {
        WebElement wrongPatient=driver.findElement(By.xpath("//input[@id='patient-search']"));
        wrongPatient.sendKeys("Aygul Abilova");
        MyFunc.Bekle(2);
+
+
+
 
 
 
