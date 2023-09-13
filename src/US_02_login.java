@@ -5,7 +5,7 @@ import org.testng.asserts.SoftAssert;
 
 public class US_02_login extends BaseDriverforLogins {
 
-    @Test(dataProvider = "UserData")
+    @Test(dataProvider = "UserData",groups = {"Smoke","Login"})
 
 
     public void login(String username, String password){

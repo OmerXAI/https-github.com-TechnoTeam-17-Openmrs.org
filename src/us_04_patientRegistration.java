@@ -15,7 +15,7 @@ public class us_04_patientRegistration extends BaseDriver {
 
 
     @Test(groups = {"Regression"})
-    public static void registrationTest() {
+    public static String registrationTest() {
 
         //driver.get("https://demo.openmrs.org/openmrs/login.htm");
 
@@ -96,6 +96,8 @@ public class us_04_patientRegistration extends BaseDriver {
         Assert.assertTrue(isim1.contains(patientName), " Bulunamadı");
         Assert.assertTrue(isim2.contains(patientLastName), " Bulunamadı");
 
+
+        return patient;
 
 
     }
