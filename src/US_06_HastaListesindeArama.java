@@ -6,14 +6,13 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static javafx.scene.input.KeyCode.W;
 
 public class US_06_HastaListesindeArama extends BaseDriver {
 
    @Test
     public void Test(){
 
-       login();
+     //  login();
 
        WebElement findPatient=driver.findElement(By.id("coreapps-activeVisitsHomepageLink-coreapps-activeVisitsHomepageLink-extension"));
        findPatient.click();
