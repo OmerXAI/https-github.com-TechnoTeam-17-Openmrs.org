@@ -5,12 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Action;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.safari.SafariDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
@@ -18,13 +13,13 @@ import java.time.Duration;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class BaseDriver {
+public class BaseDriverforLogins {
 
     public static WebDriver driver; // SingletonDriver method
     public static WebDriverWait wait;
 
     @BeforeClass
-    public void baslangicIslemleri(){
+    public void baslangicIslemleri2(){
         Logger logger= Logger.getLogger(""); // output yapılan logları al.
         logger.setLevel(Level.SEVERE); // sadece ERROR ları göster
 
@@ -34,15 +29,15 @@ public class BaseDriver {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));  // 20 sn mühlet: elementi bulma mühleti
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
-        login(); //her testin baslangicinda login yapilmadigi icin simdilik yoruma alindi
+        //login(); //her testin baslangicinda login yapilmadigi icin simdilik yoruma alindi
 
     }
-public void logout(){
+public void logout2(){
     WebElement logouta = driver.findElement(By.xpath("//a[@href='/openmrs/appui/header/logout.action?successUrl=openmrs']"));
     logouta.click();
 
 }
-    public void login(){
+    public void login2(){
         driver.get("https://openmrs.org");
         MyFunc.Bekle(1);
         mrs_elements elemans=new mrs_elements();
@@ -77,7 +72,7 @@ public void logout(){
     }
 
    @AfterClass
-    public void bitisIslemleri(){ // tearDown
+    public void bitisIslemleri2(){ // tearDown
 
         MyFunc.Bekle(2);
         //driver.quit();
