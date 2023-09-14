@@ -3,11 +3,10 @@ import Utility.MyFunc;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
-public class US_06_HastaListesindeArama extends BaseDriver {
+public class us_06_HastaListesindeArama extends BaseDriver {
 
    @Test
     public void Test(){

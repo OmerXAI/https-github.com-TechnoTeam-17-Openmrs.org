@@ -14,8 +14,7 @@ import java.util.List;
 public class us_05_myaccount extends BaseDriver {
     @Test
     public void test1() {
-        String a=us_04_patientRegistration.registrationTest();
-      //  login();
+
 
         mrs_elements elemans=new mrs_elements();
         Actions aksiyonlar = new Actions(driver);
