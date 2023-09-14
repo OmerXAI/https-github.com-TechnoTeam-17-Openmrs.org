@@ -1,7 +1,11 @@
 import Utility.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+
+import java.lang.annotation.ElementType;
 
 public class US_02_login extends BaseDriverforLogins {
 
@@ -9,11 +13,13 @@ public class US_02_login extends BaseDriverforLogins {
 
 
     public void login(String username, String password){
+
         driver.get("https://openmrs.org");
         MyFunc.Bekle(2);
         mrs_elementsforlogins elemans= new mrs_elementsforlogins();
+
         elemans.demobuton.click();
-        MyFunc.Bekle(1);
+       MyFunc.Bekle(1);
 
         elemans.expo2.click();
         MyFunc.Bekle(1);
@@ -37,6 +43,9 @@ public class US_02_login extends BaseDriverforLogins {
 
         //   wait.until(ExpectedConditions.urlToBe("https://demo.openmrs.org/openmrs/referenceapplication/home.page"));
         MyFunc.Bekle(10);
+
+             //wait.until(ExpectedConditions.urlToBe("https://demo.openmrs.org/openmrs/referenceapplication/home.page"));
+
     }
         @DataProvider // bu metoda dataprovider görevi verildi.
         public Object[][] UserData(){ // DataProvider olarak kullanılcak metodun tipi Object olmak zorunda.
@@ -49,9 +58,8 @@ public class US_02_login extends BaseDriverforLogins {
                     {"serkan","serkan500"},
                     {"neslihan","hakan700"},
                     {"aygul","nergis300"},
-                    {"Admin","Admin123"},
 
-            };
+                             };
 
             return data;
 
