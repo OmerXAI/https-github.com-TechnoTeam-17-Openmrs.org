@@ -44,29 +44,26 @@ public class US_02_login extends BaseDriverforLogins {
         //   wait.until(ExpectedConditions.urlToBe("https://demo.openmrs.org/openmrs/referenceapplication/home.page"));
         MyFunc.Bekle(10);
 
-             //wait.until(ExpectedConditions.urlToBe("https://demo.openmrs.org/openmrs/referenceapplication/home.page"));
+        WebElement errorMessageElement = driver.findElement(By.xpath("//div[@id='error-message']"));
+        String errorMessage = errorMessageElement.getText();
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertTrue(errorMessage.contains("Invalid username/password"), "Login should result in 'Invalid username/password' message for user: " + username);
 
-    }
-        @DataProvider // bu metoda dataprovider görevi verildi.
-        public Object[][] UserData(){ // DataProvider olarak kullanılcak metodun tipi Object olmak zorunda.
-            SoftAssert softAssert=new SoftAssert();
-
-            Object[][] data={
-                    {"ihsan","122334"},
-                    {"sokol", "rustem5"},
-                    {"zeynep","zeynep111"},
-                    {"serkan","serkan500"},
-                    {"neslihan","hakan700"},
-                    {"aygul","nergis300"},
-
-                             };
-
-            return data;
-
-
-
-
+        // Assert all the conditions
+        softAssert.assertAll();
     }
 
-    }
+    @DataProvider    // DataProvider olarak kullanılcak metodun tipi Object olmak zorunda.
+    public Object[][] UserData() {
+        Object[][] data = {
+                {"ihsan","122334"},
+                {"sokol", "rustem5"},
+                {"zeynep","zeynep111"},
+                {"serkan","serkan500"},
+                {"neslihan","hakan700"},
+                {"aygul","nergis300"},
 
+        };
+        return data;
+    }
+}
