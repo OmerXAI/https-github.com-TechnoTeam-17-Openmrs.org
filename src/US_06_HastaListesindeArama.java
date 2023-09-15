@@ -12,15 +12,15 @@ public class US_06_HastaListesindeArama extends BaseDriver {
    @Test
     public void Test(){
 
-     //  login();
 
        WebElement findPatient=driver.findElement(By.id("coreapps-activeVisitsHomepageLink-coreapps-activeVisitsHomepageLink-extension"));
        findPatient.click();
-
+        MyFunc.Bekle(2);
        WebElement patientID=driver.findElement(By.xpath("//input[@class='form-control']"));
-       patientID.sendKeys("10010W");
+       patientID.sendKeys("100TLU");
 
        WebElement clickPatient=driver.findElement(By.xpath("//tbody[@role='alert']"));
+       MyFunc.Bekle(2);
        clickPatient.click();
 
     JavascriptExecutor js= (JavascriptExecutor) driver;
@@ -46,7 +46,10 @@ public class US_06_HastaListesindeArama extends BaseDriver {
 
        WebElement wrongPatient=driver.findElement(By.xpath("//input[@id='patient-search']"));
        wrongPatient.sendKeys("Aygul Abilova");
-       MyFunc.Bekle(2);
+
+
+       MyFunc.Bekle(4);
+       driver.quit();
 
 
 

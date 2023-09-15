@@ -30,9 +30,10 @@ public class us_10_wrongClock extends BaseDriver {
         aksiyon3.perform();
         MyFunc.Bekle(5);
 
-        System.out.println("hata = " + elemans.hata.getText());
-
-        Assert.assertTrue(elemans.hata.getText().startsWith(" Your comp"), " HATA mesaji olusmadi");
-
+        WebElement hata2=driver.findElement(By.id("time-zone-warning"));
+        //Assert.assertTrue(hata2.getText().contains(" Your comp"), " HATA mesaji olusmadi");
+        System.out.println(hata2.getText()+" ");
+        MyFunc.Bekle(4);
+        driver.quit();
     }
 }

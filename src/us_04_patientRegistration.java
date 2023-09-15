@@ -14,10 +14,8 @@ import java.util.List;
 public class us_04_patientRegistration extends BaseDriver {
 
 
-    @Test(groups = {"Regression"})
+    //us09 ile beraber us_09_merge dosyasinda calisiyor
     public static String registrationTest() {
-
-        //driver.get("https://demo.openmrs.org/openmrs/login.htm");
 
         WebElement loginLokasyonSecimi = driver.findElement(By.xpath("//span[@id='selected-location']"));
         loginLokasyonSecimi.click();
@@ -34,20 +32,11 @@ public class us_04_patientRegistration extends BaseDriver {
         System.out.println("randomSecim = " + randomSecim);//random bir sayi uretildi
         String locationAdi = loginLokasyonSecimiList.get(randomSecim).getText();//randomdaki locationin adi alindi
 
-      // List<WebElement> locations = driver.findElements(By.xpath("//ul[@class='select']//li"));
-
-      // int randomSecim = MyFunc.randomGenerator(locations.size());//random bir sayi uretildi
-
-      //  String locationAdi = locations.get(randomSecim).getText();//randomdaki locationin adi alindi
         System.out.println("Lokasyon = " + locationAdi);//kontrol icin yazildi
         loginLokasyonSecimiList.get(randomSecim).click();
 
         mrs_elements elemans = new mrs_elements();
-        //  elemans.name.sendKeys("Admin");
-        //  MyFunc.Bekle(1);
-        //  elemans.pass.sendKeys("Admin123");
-        //  MyFunc.Bekle(1);
-        //  elemans.loginbut.click();
+
         elemans.patientRegistarion.click();
         String patientName="Patient";
         elemans.nameReg.sendKeys(patientName);
